@@ -44,6 +44,12 @@ void MyGame::play()
 						turn = 1;
 					}
 				}
+
+				if (win) {
+					drawWinScene(gameWindow, turn);
+				}
+
+
 			}
 		}
 		gameWindow.clear();
@@ -118,6 +124,32 @@ void MyGame::drawSlot(sf::RenderWindow &gameWindow, int symbol, int x_pos, int y
 		gameWindow.draw(cross2);
 	}
 
+}
+
+void MyGame::drawWinScene(sf::RenderWindow &gameWindow, int side)
+{
+	sf::Text winText;
+	sf::Font winFont;
+	if (!winFont.loadFromFile("lucid.ttf"))
+	{
+		std::cerr << ".Error while loading font" << std::endl;
+		exit;
+	} 
+	winText.setFont(winFont);
+	winText.setCharacterSize(80);
+	winText.setColor(sf::Color::Red);
+	winText.setPosition(100, 100);
+
+	if (side == 1) {
+		winText.setString("Plr O wins!");
+		std::cout << "Plr O wins!" << std::endl;
+		
+	}
+	else if (side == 2) {
+		winText.setString("Player X wins!");
+		std::cout << "Plr X wins!" << std::endl;
+	}
+	gameWindow.draw(winText);	
 }
 
 bool MyGame::isWinner(std::vector<std::vector<int>> &gameBoard, int side)
