@@ -1,13 +1,9 @@
-#include <iostream>
-#include <vector>
-#include "SFML\Graphics.hpp"
+#include "MyGame.h" 
 
 int main() {
 
-
-	//wywolanie z klasy
-	
-
+	MyGame game;
+	game.play();
 
 	return 0;
 }
