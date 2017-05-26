@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #ifndef MYGAME_H
 #define MYGAME_H
 
@@ -48,5 +47,4 @@ public:
 	
 };
 
->>>>>>> e65176cca14b7f3f66c9f3343cd205515c779255
 #endif
